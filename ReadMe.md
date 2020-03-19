@@ -1,1 +1,0 @@
-# GildedRose PHP Kata
