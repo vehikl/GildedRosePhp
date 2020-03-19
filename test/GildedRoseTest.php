@@ -2,7 +2,9 @@
 
 namespace App;
 
-class GildedRoseTest extends \PHPUnit\Framework\TestCase {
+use PHPUnit\Framework\TestCase;
+
+class GildedRoseTest extends TestCase {
     public function testFoo() {
         $items      = [new Item("foo", 0, 0)];
         $gildedRose = new GildedRose($items);
