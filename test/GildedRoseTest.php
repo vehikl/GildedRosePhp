@@ -17,11 +17,4 @@ class GildedRoseTest extends TestCase {
         tacos();
         $this->assertMatchesFileSnapshot(__DIR__ . '/../fixtures/output.txt');
     }
-
-    public function testFoo() {
-        $items      = [new Item("foo", 0, 0)];
-        $gildedRose = new GildedRose($items);
-        $gildedRose->updateQuality();
-        $this->assertEquals("fixme", $items[0]->name);
-    }
 }
