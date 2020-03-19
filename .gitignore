@@ -3,3 +3,4 @@
 /.idea
 /test/.phpunit.result.cache
 /fixtures/output.txt
+/test/__snapshots__
