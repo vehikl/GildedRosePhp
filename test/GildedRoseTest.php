@@ -8,13 +8,12 @@ use Spatie\Snapshots\MatchesSnapshots;
 require __DIR__ . '/../fixtures/texttest_fixture.php';
 
 class GildedRoseTest extends TestCase {
-
     use MatchesSnapshots;
 
     /** @test */
     public function it_tests_snapshot()
     {
-        tacos();
+        generateReport();
         $this->assertMatchesFileSnapshot(__DIR__ . '/../fixtures/output.txt');
     }
 }
