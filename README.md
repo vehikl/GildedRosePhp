@@ -6,18 +6,27 @@ Gilded Rose is a great Kata for learning how to set up snapshot testing and code
 
 ## Getting Started
 
+### Running Locally
+
+1. Install the composer packages.
+2. Run phpunit to generate the snapshot.
+3. Run phpunit again to assert the snapshot stayed the same
+
+### Running Docker
+
 1. Run the Docker container
 
    $ `docker-compose up -d --build app`
-2. Install the composer packages. 
-   
+2. Install the composer packages.
+
    $ `docker-compose exec app composer install`
 3. Run phpunit to generate the snapshot.
-   
+
    $ `docker-compose exec app phpunit`
 4. Run phpunit again to assert the snapshot stayed the same
-   
+
    $ `docker-compose exec app phpunit`
+
 
 ## Git Flow
 
