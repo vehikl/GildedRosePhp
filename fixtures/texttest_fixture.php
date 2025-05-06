@@ -5,9 +5,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use App\GildedRose;
 use App\Item;
 
-function generateReport(int $days = 50)
+function generateReport(int $days = 50): string
 {
-    file_put_contents(__DIR__ . "/output.txt", "Report:\n");
+    $report =  "Report:\n";
 
     $items = array(
         new Item('+5 Dexterity Vest', 10, 20),
@@ -25,12 +25,14 @@ function generateReport(int $days = 50)
     $app = new GildedRose($items);
 
     for ($i = 0; $i < $days; $i++) {
-        file_put_contents(__DIR__ . "/output.txt", "-------- day $i --------\n", FILE_APPEND);
-        file_put_contents(__DIR__ . "/output.txt", "name, sellIn, quality\n", FILE_APPEND);
+        $report .= "-------- day $i --------\n";
+        $report .= "name, sellIn, quality\n";
         foreach ($items as $item) {
-            file_put_contents(__DIR__ . "/output.txt", $item . PHP_EOL, FILE_APPEND);
+            $report .= $item . PHP_EOL;
         }
-        file_put_contents(__DIR__ . "/output.txt", PHP_EOL, FILE_APPEND);
+        $report .= PHP_EOL;
         $app->updateQuality();
     }
+
+    return $report;
 }
